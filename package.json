@@ -1,0 +1,15 @@
+{
+  "name": "js_task14",
+  "version": "1.0.0",
+  "description": "toDo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node esbuilder.config.js"
+  },
+  "author": "Pavel",
+  "license": "ISC",
+  "dependencies": {
+    "esbuild": "^0.14.1"
+  }
+}
