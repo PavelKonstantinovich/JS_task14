@@ -1,13 +1,10 @@
-let data = []
-const listElement = document.querySelector('#list')
-
-class ToDoList {
+ class ToDoList {
     isEdit = false
     currentEditedToDo = {}
 
-    constructor(listElement) {
+    constructor(data, listElement) {
       this.listElement = listElement
-
+      this.data = data
       this.init()
     }
     init() {
@@ -33,7 +30,7 @@ class ToDoList {
 
       if (type !== 'checkbox') return
 
-      data.forEach((item) => {
+      this.data.forEach((item) => {
         if (item.id == id) {
           item.isChecked = checked
         }
@@ -49,7 +46,7 @@ class ToDoList {
       const id = event.target.getAttribute('data-id')
 
       if (role == 'remove') {
-        data = data.filter((item) => item.id != id)
+        this.data = this.data.filter((item) => item.id != id)
 
         this.render()
         this.isEdit = false
@@ -66,7 +63,7 @@ class ToDoList {
           return
         }
 
-        data.forEach((item) => {
+        this.data.forEach((item) => {
           if (item.id == id) {
             this.currentEditedToDo = item
 
@@ -153,7 +150,7 @@ class ToDoList {
     createToDoElements() {
       let result = ''
 
-      data.forEach((toDo) => {
+      this.data.forEach((toDo) => {
         result = result + this.createToDoTemplate(toDo)
       })
 
@@ -166,4 +163,4 @@ class ToDoList {
     }
   }
 
-new ToDoList(listElement)
+export {ToDoList}

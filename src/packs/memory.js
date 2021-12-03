@@ -1,7 +1,6 @@
-let data = []
-
-class ToDoMemory {
-    constructor() {
+ class ToDoMemory {
+    constructor(data) {
+    data =  JSON.parse(dataFromStorage) || []
       this.#init()
     }
 
@@ -14,7 +13,7 @@ class ToDoMemory {
     }
 
     #handleBeforeUnload() {
-      const json = JSON.stringify(data)
+      const json = JSON.stringify(this.data)
       localStorage.setItem('data', json)
     }
 
@@ -23,7 +22,7 @@ class ToDoMemory {
       const dataFromStorage = localStorage.getItem('data')
 
       if (dataFromStorage) {
-        data = JSON.parse(dataFromStorage)
+        this.data = JSON.parse(dataFromStorage)
 
         const eventRenderNeed = new Event('render:need')
         window.dispatchEvent(eventRenderNeed)
@@ -31,4 +30,4 @@ class ToDoMemory {
     }
   }
 
-  new ToDoMemory()
+  export {ToDoMemory}

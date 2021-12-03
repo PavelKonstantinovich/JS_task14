@@ -1,10 +1,8 @@
-let data = []
-const formCreateElement = document.querySelector('#formCreate')
-
 class ToDoFormCreate {
 
-  constructor(formCreateElement) {
+  constructor(data, formCreateElement) {
     this.formCreateElement = formCreateElement
+    this.data = data
     this.init()
   }
 
@@ -26,7 +24,7 @@ class ToDoFormCreate {
       toDo[name] = value
     }
 
-    data.push(toDo)
+    this.data.push(toDo)
     this.formCreateElement.reset()
 
     const eventRenderNeed = new Event('render:need')
@@ -34,4 +32,4 @@ class ToDoFormCreate {
   }
 }
 
-new ToDoFormCreate(formCreateElement)
+export {ToDoFormCreate}
