@@ -1,20 +1,38 @@
 {
   "name": "js_task14",
   "version": "1.0.0",
-  "description": "toDo",
-  "main": "index.js",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "description": "webpack",
+  "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config prod.config.js"
+    "build": "webpack",
+    "dev": "webpack --watch --progress"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PavelKonstantinovich/JS_task14.git"
+  },
+  "keywords": [
+    "ToDo"
+  ],
   "author": "Pavel",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PavelKonstantinovich/JS_task14/issues"
+  },
+  "homepage": "https://github.com/PavelKonstantinovich/JS_task14#readme",
   "dependencies": {
-    "esbuild": "^0.14.1"
+    "webpack": "^5.64.4"
   },
   "devDependencies": {
-        "webpack": "^5.64.4",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "css-loader": "^6.5.1",
+    "eslint": "^8.4.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-vue": "^8.1.1",
+    "style-loader": "^3.3.1",
     "webpack-cli": "^4.9.1"
   }
 }

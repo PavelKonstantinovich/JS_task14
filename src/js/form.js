@@ -19,7 +19,7 @@ class ToDoFormCreate {
       isChecked: false,
     }
 
-    const formData = new FormData(formCreateElement)
+    const formData = new FormData(this.formCreateElement)
     for (let [name, value] of formData.entries()) {
       toDo[name] = value
     }
@@ -32,4 +32,4 @@ class ToDoFormCreate {
   }
 }
 
-export {ToDoFormCreate}
+export { ToDoFormCreate }
