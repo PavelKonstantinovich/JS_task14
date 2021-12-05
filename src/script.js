@@ -1,6 +1,6 @@
-import {ToDoMemory} from './packs/memory'
- import {ToDoFormCreate} from './packs/form'
- import {ToDoList} from './packs/list'
+import {ToDoMemory} from './js/memory'
+ import {ToDoFormCreate} from './js/form'
+ import {ToDoList} from './js/list'
 let data = []
 
 const formCreateElement = document.querySelector('#formCreate')
