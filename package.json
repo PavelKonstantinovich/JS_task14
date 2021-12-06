@@ -1,0 +1,30 @@
+{
+  "name": "js_task14",
+  "version": "1.0.0",
+  "description": "ToDo",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack --watch --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PavelKonstantinovich/JS_task14.git"
+  },
+  "keywords": [
+    "ToDo"
+  ],
+  "author": "Pavel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PavelKonstantinovich/JS_task14/issues"
+  },
+  "homepage": "https://github.com/PavelKonstantinovich/JS_task14#readme",
+  "devDependencies": {
+    "css-loader": "^6.5.1",
+    "eslint": "^8.4.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
