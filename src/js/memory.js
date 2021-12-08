@@ -16,15 +16,11 @@ class ToDoMemory {
   #handleBeforeUnload() {
     const json = JSON.stringify(this.data)
     localStorage.setItem('data', json)
+    // localStorage.clear()
   }
 
-  #handleDOMReady(event) {
-    event.preventDefault()
-    const dataFromStorage = localStorage.getItem('data')
-
-    if (dataFromStorage) {
-      this.data = JSON.parse(dataFromStorage)
-
+  #handleDOMReady() {
+    if (this.data.length) {
       const eventRenderNeed = new Event('render:need')
       window.dispatchEvent(eventRenderNeed)
     }

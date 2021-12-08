@@ -37,8 +37,6 @@ class ToDoList {
     })
 
     this.render()
-    this.isEdit = false
-
   }
 
   #handleClickRemoveButton(event) {
@@ -46,10 +44,16 @@ class ToDoList {
     const id = event.target.getAttribute('data-id')
 
     if (role == 'remove') {
-      this.data = this.data.filter((item) => item.id != id)
-      
+      let removedItemIndex = 0
+
+      this.data.forEach((item, index) => {
+        if (item.id == id) {
+          removedItemIndex = index
+        }
+      })
+
+      this.data.splice(removedItemIndex, 1)
       this.render()
-      this.isEdit = false
     }
   }
 
@@ -81,7 +85,6 @@ class ToDoList {
 
     if (role == 'cancelEdit') {
       this.render()
-      this.isEdit = false
     }
   }
 
@@ -94,13 +97,11 @@ class ToDoList {
 
       this.currentEditedToDo.content = target.querySelector('[name="content"]').value
       this.render()
-      this.isEdit = false
     }
   }
 
   #handleRenderNeed() {
     this.render()
-    this.isEdit = false
   }
 
   createToDoTemplate({ id, content, isChecked }) {
@@ -158,6 +159,7 @@ class ToDoList {
 
   render() {
     this.listElement.innerHTML = this.createToDoElements()
+    this.isEdit = false
   }
 }
 export { ToDoList }
